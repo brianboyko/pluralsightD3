@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --require babel-polyfill --compilers js:babel-register",
-    "start": "./node_modules/.bin/webpack --config webpack.config.js"
+    "build:backend": "./node_modules/.bin/babel src/backend -d dist/backend",
+    "serve": "npm run build:backend && node dist/backend/index.js",
+    "start": "npm run serve && ./node_modules/.bin/webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
     "webpack": "^2.2.0"
   },
   "dependencies": {
+    "express": "^4.14.1",
     "react": "^15.4.2"
   }
 }
