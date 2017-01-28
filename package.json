@@ -1,0 +1,37 @@
+{
+  "name": "pluralsight-d3",
+  "version": "1.0.0",
+  "description": "Repo for experiments for Pluralsight's D3 course",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require babel-polyfill --compilers js:babel-register",
+    "start": "./node_modules/.bin/webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brianboyko/pluralsightD3.git"
+  },
+  "author": "Brian Boyko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brianboyko/pluralsightD3/issues"
+  },
+  "homepage": "https://github.com/brianboyko/pluralsightD3#readme",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-register": "^6.22.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "mocha": "^3.2.0",
+    "webpack": "^2.2.0"
+  },
+  "dependencies": {
+    "react": "^15.4.2"
+  }
+}
