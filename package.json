@@ -4,7 +4,7 @@
   "description": "Repo for experiments for Pluralsight's D3 course",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require babel-polyfill --compilers js:babel-register",
+    "test": "mocha --recursive --require babel-polyfill --compilers js:babel-register",
     "build:backend": "./node_modules/.bin/babel serversrc -d dist/server",
     "serve": "npm run build:backend && node dist/server/index.js",
     "start": "npm run serve && ./node_modules/.bin/webpack --config webpack.config.babel.js",
@@ -43,6 +43,7 @@
     "react-redux": "^5.0.2",
     "react-router": "^3.0.2",
     "react-router-redux": "^4.0.7",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-logger": "^2.7.4"
   }
 }
