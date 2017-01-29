@@ -2,9 +2,9 @@ import chai from 'chai';
 import chaiAP from 'chai-as-promised';
 chai.use(chaiAP);
 const expect = chai.expect;
-import * as types from '../../../src/constants/index';
+import * as types from '../../app/constants/index';
 
-import {incrementCounter, doubleCounter, clearCounter} from '../../../src/actions/counterActions';
+import {incrementCounter, doubleCounter, clearCounter} from '../../app/actions/counterActions';
 
 describe("counterActions", function(){
   describe("incrementCounter", function(){

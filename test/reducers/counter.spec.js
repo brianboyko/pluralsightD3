@@ -2,9 +2,9 @@ import chai from 'chai';
 import chaiAP from 'chai-as-promised';
 chai.use(chaiAP);
 const expect = chai.expect;
-import * as types from '../../../src/constants/index';
+import * as types from '../../app/constants/index';
 
-import counter from '../../../src/reducers/counter';
+import counter from '../../app/reducers/counter';
 
 describe("reducer: counter", function(){
   it('returns 0 as default', function(){
