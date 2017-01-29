@@ -8,7 +8,7 @@ class Counter extends Component {
     this.handleValueChange = this.handleValueChange.bind(this);
     this.handleCounterChange = this.handleCounterChange.bind(this);
     this.handleDouble = this.handleDouble.bind(this);
-    this.handleClear = this.handleClear.bind(this); 
+    this.handleClear = this.handleClear.bind(this);
     this.state = {
       value: 0
     }

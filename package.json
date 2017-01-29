@@ -2,13 +2,11 @@
   "name": "pluralsight-d3",
   "version": "1.0.0",
   "description": "Repo for experiments for Pluralsight's D3 course",
-  "main": "index.js",
+  "main": "app/main.js",
   "scripts": {
     "test": "mocha --recursive --require babel-polyfill --compilers js:babel-register",
-    "build:backend": "./node_modules/.bin/babel serversrc -d dist/server",
-    "serve": "npm run build:backend && node dist/server/index.js",
-    "start": "npm run serve && ./node_modules/.bin/webpack --config webpack.config.babel.js",
-    "devserver": "./node_modules/.bin/webpack-dev-server"
+    "start": "node server",
+    "build": "rimraf dist && cross-env NODE_ENV=production ,/node_modules/.bin/webpack --config ./webpack.production.config.js --progress --profile --colors"
   },
   "repository": {
     "type": "git",
@@ -31,9 +29,15 @@
     "babel-register": "^6.22.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
+    "css-loader": "^0.26.1",
+    "html-webpack-plugin": "^2.26.0",
+    "http-proxy": "^1.16.2",
     "mocha": "^3.2.0",
+    "rimraf": "^2.5.4",
+    "style-loader": "^0.13.1",
     "webpack": "^2.2.0",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-server": "^1.16.2",
+    "webpack-hot-middleware": "^2.15.0"
   },
   "dependencies": {
     "aphrodite": "^1.1.0",
