@@ -43,6 +43,7 @@
     "aphrodite": "^1.1.0",
     "d3": "^4.5.0",
     "express": "^4.14.1",
+    "node-fetch": "^1.6.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",

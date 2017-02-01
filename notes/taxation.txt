@@ -1,0 +1,24 @@
+Taxation:
+
+Australian Taxes: 
+
+0 – $18,200: Nil
+$18,201 – $37,000: 19c for each $1 over $18,200
+$37,001 – $87,000: $3,572 plus 32.5c for each $1 over $37,000
+$87,001 – $180,000: $19,822 plus 37c for each $1 over $87,000
+$180,001 and over: $54,232 plus 45c for each $1 over $180,000
+
+American Taxes:
+
+
+Taxable Income  Tax Rate
+$0—$9,275 10%
+$9,276—$37,650  $927.50 plus 15% of the amount over $9,275
+$37,651—$91,150 $5,183.75 plus 25% of the amount over $37,650
+$91,151—$190,150  $18,558.75 plus 28% of the amount over $91,150
+$190,151—$ 413,350  $46,278.75 plus 33% of the amount over $190,150
+$413,351—$415,050 $119,934.75 plus 35% of the amount over $413,350
+$415,051 or more  $120,529.75 plus 39.6% of the amount over $415,050
+
+http://fixer.io/ is a free currency exchange API. 
+http://api.fixer.io/latest?symbols=USD,GBP
