@@ -1,5 +1,7 @@
 'use strict';
 import fetch from 'node-fetch';
+import {healthcareTiers} from '../constants/healthcareTiers';
+
 
 export const getAusTaxRateAUD = (salary) => {
   if (salary <= 18200) {
@@ -15,7 +17,33 @@ export const getAusTaxRateAUD = (salary) => {
   }
 }
 
-// this is only for filing singly. 
+export const caluclateMedicareLevyAUD = (salary) => {
+  if (salary <= 21335) {
+    return 0;
+  } else if (salary <= 26668){
+    return (salary - 21335) * 0.1
+  } else {
+    return salary * 0.02;
+  }
+}
+
+export const calculateMedicareLevySurchargeAUD = (salary) => {
+  if (salary <= 90000){
+    return 0;
+  } else if (salary <= 105000){
+    return salary * 0.01;
+  } else if (salary <= 140000){
+    return salary * 0.0125;
+  } else {
+    return salary * 0.015;
+  }
+}
+
+export const calculatePrivateInsuranceAUS = (costMonthly) => 12 * costMonthly;
+
+export const calculatePrivateInsuranceUSD = (tier) => healthcareTiers[tier]; 
+
+// this is only for filing singly.
 export const getUSTaxRateUSD = (salary) => {
   if (salary <= 9275) {
     return salary * 0.10;
@@ -38,14 +66,14 @@ export const getRate = ({from, to}) => new Promise((resolve, reject) => {
   fetch(`http://api.fixer.io/latest?symbols=${from},${to}`)
       .then((res) => res.json())
       .then((json) => {
-        resolve(json.rates[to] / json.rates[from]); 
+        resolve(json.rates[to] / json.rates[from]);
       })
       .catch((rej) => reject(rej));
 })
 
 // Taxation:
 
-// Australian Taxes: 
+// Australian Taxes:
 
 // 0 – $18,200: Nil
 // $18,201 – $37,000: 19c for each $1 over $18,200
@@ -65,7 +93,7 @@ export const getRate = ({from, to}) => new Promise((resolve, reject) => {
 // $413,351—$415,050 $119,934.75 plus 35% of the amount over $413,350
 // $415,051 or more  $120,529.75 plus 39.6% of the amount over $415,050
 
-// http://fixer.io/ is a free currency exchange API. 
+// http://fixer.io/ is a free currency exchange API.
 // http://api.fixer.io/latest?symbols=USD,GBP
 
-// salary is AUD. 
+// salary is AUD.
